@@ -1,0 +1,22 @@
+<h1>Poll Results</h1>
+
+
+<select id="pollResults-select">
+    <option value="">--Choose a LGA--</option>
+    {% for lga_name, lga_result in lga_names_ids.items %}
+        <option value={{lga_result}}>{{lga_name}}</option>
+    {%endfor%}
+</select>
+<p id="selected-value">Result: </p>
+
+
+<script>
+    const selectElement = document.querySelector("#pollResults-select");
+    const selectedValueElement = document.querySelector("#selected-value");
+    
+    selectElement.addEventListener("change", function(e) {
+        let selectedValue =  e.target.value;
+
+        selectedValueElement.textContent = `Results: ${selectedValue}`;
+    });
+</script>

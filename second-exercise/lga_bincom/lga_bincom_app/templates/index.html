@@ -1,0 +1,22 @@
+<h1>Home website</h1>
+
+<table>
+    <p>
+        {{polling_units.polling_unit_name}}
+    </p>
+    {% for pol_unit in polling_units %}
+        <tr>
+            {% if pol_unit.polling_unit_id != 0%}
+                <th scope="row">{{pol_unit.uniqueid}}</th>
+                <td>{{pol_unit.polling_unit_id}}</td>
+                <td>{{pol_unit.ward_id}}</td>
+                <td>{{pol_unit.lga_id}}</td>
+                <td>{{pol_unit.uniquewardid}}</td>
+                <td>{{pol_unit.polling_unit_number}}</td>
+                <td>{{pol_unit.polling_unit_name}}</td>
+                <td>{{pol_unit.polling_unit_description}}</td>
+                <td>{{pol_unit.polling_unit_name}}</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+</table>
